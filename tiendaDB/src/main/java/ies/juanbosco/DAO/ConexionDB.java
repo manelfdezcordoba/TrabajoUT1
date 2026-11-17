@@ -1,0 +1,18 @@
+package ies.juanbosco.DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+/*
+* Hacemos el puente de conexion a nuestra base de datos
+* */
+public class ConexionDB {
+    private static final String URL = "jdbc:mysql://localhost:3306/mitiendaDB";
+    private static final String USER = "root";
+    private static final String PASSWORD = "admin123";
+
+    public static Connection getConexion() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
+}
+
